@@ -11,3 +11,4 @@ Program returns a one line extractive summary of the text.
 
 ## How to Run
 1. Replace `text.txt` with your text to summarize. 
+2. Run `python summarize.py` in root of directory.
