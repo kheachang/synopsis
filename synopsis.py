@@ -25,11 +25,11 @@ sentence_tokens = [
 
 w2v = Word2Vec(sentence_tokens, vector_size=1, min_count=1, epochs=1000)
 
-sentence_embeddings = [[w2v[word][0] for word in words] for words in sentence_tokens]
+sentence_embeddings=[[w2v.wv[word][0] for word in words] for words in sentence_tokens]
 
-max_len = max([len(tokens) for tokens in sentence_tokens])
+max_len=max([len(tokens) for tokens in sentence_tokens])
 
-sentence_embeddings = [np.pad(embedding,(0,max_len-len(embedding)),'constant') for embedding in sentence_embeddings]
+sentence_embeddings=[np.pad(embedding,(0,max_len-len(embedding)),'constant') for embedding in sentence_embeddings]
 
 similarity_matrix = np.zeros([len(sentence_tokens), len(sentence_tokens)])
 
@@ -48,4 +48,3 @@ top = dict(sorted(top_sentence.items(), key=lambda x: x[1], reverse=True)[:4])
 for sent in sentences:
     if sent in top.keys():
         print(sent)
-
