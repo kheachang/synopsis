@@ -6,6 +6,7 @@ Extractive text summarizer based on [TextRank algorithm](https://web.eecs.umich.
 
 > (Rada Mihalcea and Paul Tarau, "TextRank: Bringing Order into Texts", 2004)
 
+Program returns a one line extractive summary of the text.
 
 
 ## How to Run
