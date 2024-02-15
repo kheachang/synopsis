@@ -30,3 +30,8 @@ max_len=max([len(tokens) for tokens in sentence_tokens])
 
 sentence_embeddings=[np.pad(embedding,(0,max_len-len(embedding)),'constant') for embedding in sentence_embeddings]
 
+similarity_matrix = np.zeros([len(sentence_tokens), len(sentence_tokens)])
+
+for i,row_embedding in enumerate(sentence_embeddings):
+    for j,column_embedding in enumerate(sentence_embeddings):
+        similarity_matrix[i][j]=1-spatial.distance.cosine(row_embedding,column_embedding)
