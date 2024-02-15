@@ -35,3 +35,7 @@ similarity_matrix = np.zeros([len(sentence_tokens), len(sentence_tokens)])
 for i,row_embedding in enumerate(sentence_embeddings):
     for j,column_embedding in enumerate(sentence_embeddings):
         similarity_matrix[i][j]=1-spatial.distance.cosine(row_embedding,column_embedding)
+
+nx_graph = nx.from_numpy_array(similarity_matrix)
+
+scores = nx.pagerank(nx_graph)
