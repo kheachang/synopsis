@@ -39,3 +39,12 @@ for i,row_embedding in enumerate(sentence_embeddings):
 nx_graph = nx.from_numpy_array(similarity_matrix)
 
 scores = nx.pagerank(nx_graph)
+
+top_sentence={sentence:scores[index] for index,sentence in enumerate(sentences)}
+
+top=dict(sorted(top_sentence.items(), key=lambda x: x[1], reverse=True)[:4])
+
+for sent in sentences:
+    if sent in top.keys():
+        print(sent)
+
