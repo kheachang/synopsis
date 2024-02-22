@@ -8,6 +8,11 @@ Extractive text summarizer based on [TextRank algorithm](https://web.eecs.umich.
 
 Program returns a one line extractive summary of the text.
 
+## Possible extensions
+- chat bot
+- GUI
+- api
+- specific domains (legal, news, fiction, etc)
 
 ## How to Run
 1. Replace `text.txt` with your text to summarize. 
